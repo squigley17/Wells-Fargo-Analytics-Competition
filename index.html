@@ -27,9 +27,135 @@
 <p><code>Words removed:</code> 
 <code>name, the, internet, are, excel, were, is, twit, twit_hndl, Name_Resp, name_resp, twit_hndl$, w/, with, i, I, INTERNET, the, they, this, them</code></p>
 
-<p>Please see the code flow to better understand our overall process to cleaning the data. <img src="http://i.imgur.com/mlfVpv4.png" alt="code flow"></p>
+<p>Please see the code flow to better understand our overall process to cleaning the data. 
+<img src="http://i.imgur.com/mlfVpv4.png" alt="code flow"></p>
 
-<p>The most common words pulled from the overall dataset can be found in a document titled “Frequent Terms.”  We created a dendrogram of frequent terms which can also be found in the attached files. From these, we looked at correlation between frequent terms and other relevant words in the data set. Some interesting correlations can be found in the document titled “correlations.” The most commonly used words which most frequently concerned the topics of banking services and words surrounding communications were words such as the words “please”, “help”, and “call”. The dendrogram indicates the relationship of words to each other using Euclidian distance formula. Words that are more frequently used together appear in branches nearer to each other. </p>
+<p>We created a dendrogram of frequent terms which can also be found in the attached files. From these, we looked at correlation between frequent terms and other relevant words in the data set. Some interesting correlations can be found in the document titled “correlations.” The most commonly used words which most frequently concerned the topics of banking services and words surrounding communications were words such as the words <strong>“please”, “help”, and “call”</strong>. The dendrogram indicates the relationship of words to each other using Euclidian distance formula. Words that are more frequently used together appear in branches nearer to each other. </p>
+
+<p>The list of the most frequent words in the dataset included:
+<code>able</code>
+<code>about</code>
+<code>account</code>
+<code>after</code>
+<code>all</code>
+<code>any</code>
+<code>anything</code>
+<code>apply</code>
+<code>appreciate</code>
+<code>are</code>
+<code>assist</code>
+<code>assistance</code>
+<code>banking</code>
+<code>banks</code>
+<code>been</code>
+<code>best</code>
+<code>business</code>
+<code>but</code>
+<code>buy</code>
+<code>call</code>
+<code>called</code>
+<code>can</code>
+<code>cant</code>
+<code>card</code>
+<code>center</code>
+<code>check</code>
+<code>contact</code>
+<code>credit</code>
+<code>customer</code>
+<code>details</code>
+<code>did</code>
+<code>dirmsg</code>
+<code>discuss</code>
+<code>dlvr</code>
+<code>dont</code>
+<code>feedbankb</code>
+<code>financial</code>
+<code>follow</code>
+<code>following</code>
+<code>from</code>
+<code>full</code>
+<code>get</code>
+<code>give</code>
+<code>going</code>
+<code>good</code>
+<code>got</code>
+<code>grants</code>
+<code>great</code>
+<code>had</code>
+<code>happy</code>
+<code>has</code>
+<code>have</code>
+<code>help</code>
+<code>here</code>
+<code>how</code>
+<code>info</code>
+<code>information</code>
+<code>into</code>
+<code>its</code>
+<code>just</code>
+<code>know</code>
+<code>learn</code>
+<code>let</code>
+<code>like</code>
+<code>look</code>
+<code>main</code>
+<code>make</code>
+<code>may</code>
+<code>mission</code>
+<code>money</code>
+<code>more</code>
+<code>need</code>
+<code>new</code>
+<code>not</code>
+<code>now</code>
+<code>number</code>
+<code>numbers</code>
+<code>one</code>
+<code>only</code>
+<code>our</code>
+<code>out</code>
+<code>over</code>
+<code>pay</code>
+<code>phone</code>
+<code>photo</code>
+<code>please</code>
+<code>program</code>
+<code>rating</code>
+<code>see</code>
+<code>service</code>
+<code>share</code>
+<code>shared</code>
+<code>small</code>
+<code>some</code>
+<code>sorry</code>
+<code>still</code>
+<code>street</code>
+<code>swing</code>
+<code>take</code>
+<code>tell</code>
+<code>thank</code>
+<code>thanks</code>
+<code>that</code>
+<code>their</code>
+<code>there</code>
+<code>they</code>
+<code>this</code>
+<code>time</code>
+<code>today</code>
+<code>try</code>
+<code>via</code>
+<code>visit</code>
+<code>vote</code>
+<code>want</code>
+<code>well</code>
+<code>were</code>
+<code>what</code>
+<code>when</code>
+<code>who</code>
+<code>why</code>
+<code>will</code>
+<code>with</code>
+<code>would</code></p>
 
 <h3>
 <a id="dendrogram" class="anchor" href="#dendrogram" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dendrogram</h3>
@@ -39,8 +165,11 @@
 <h2>
 <a id="are-the-topics-and-substance-consistent-across-the-industry-or-are-they-isolated-to-individual-banks" class="anchor" href="#are-the-topics-and-substance-consistent-across-the-industry-or-are-they-isolated-to-individual-banks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Are the topics and substance consistent across the industry or are they isolated to individual banks?</h2>
 
-<p>We used the corpus to create datasets that were associated with each bank. <img src="http://i.imgur.com/oNzxbjf.png" alt="bank">
-Each dataset was then tested against an existing list of positive and negative words to find a sentiment score of each word in the dataset. In order to quantify the disparity between the mean sentiments of the banks as individuals compared to that of the entire data set, a T-test was performed. </p>
+<p>We used the corpus to create datasets that were associated with each bank. </p>
+
+<p><img src="http://i.imgur.com/oNzxbjf.png" alt="bank"></p>
+
+<p>Each dataset was then tested against an existing list of positive and negative words to find a sentiment score of each word in the dataset. In order to quantify the disparity between the mean sentiments of the banks as individuals compared to that of the entire data set, a T-test was performed. </p>
 
 <p>The T-tests below check to see if there is a difference in the mean sentiment between the entire data set and social media posts mentioning specific banks (BankA, BankB, BankC, and BankD).</p>
 
