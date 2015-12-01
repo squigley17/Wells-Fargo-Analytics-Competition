@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Wells-fargo-analytics-competition by squigley17</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Wells-fargo-analytics-competition</h1>
+      <h2 class="project-tagline">College of Charleston Data 101 class competition</h2>
+      <a href="https://github.com/squigley17/Wells-Fargo-Analytics-Competition" class="btn">View on GitHub</a>
+      <a href="https://github.com/squigley17/Wells-Fargo-Analytics-Competition/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/squigley17/Wells-Fargo-Analytics-Competition/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="financial-topics-discussed-on-social-media-and-cause-of-topics" class="anchor" href="#financial-topics-discussed-on-social-media-and-cause-of-topics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Financial Topics Discussed On Social Media and Cause of Topics</h3>
+
+<p>Initially, the social media dataset was cleaned by removing punctuation, uppercase, stopwords, non ascii values, extra space, and high frequency words with little meaning for this research. These included: name, the, internet, are, excel, were, is, twit, twit_hndl, Name_Resp, name_resp, twit_hndl$, w/, with, i, I, INTERNET, the, they, this, them. Please see the code flow image to better understand our overall process to cleaning the data.
+The most common words pulled from the overall dataset can be found in a document titled “Frequent Terms.”  <img src="http://i.imgur.com/U62ri4c.jpg" alt="dendrogram"> We created a dendrogram of frequent terms which can also be found in the attached files. From these, we looked at correlation between frequent terms and other relevant words in the data set. Some interesting correlations can be found in the document titled “correlations.” The most commonly used words which most frequently concerned the topics of banking services and words surrounding communications were words such as the words “please”, “help”, and “call”. The dendrogram indicates the relationship of words to each other using Euclidian distance formula. Words that are more frequently used together appear in branches nearer to each other. </p>
+
+<h3>
+<a id="are-the-topics-and-substance-consistent-across-the-industry-or-are-they-isolated-to-individual-banks" class="anchor" href="#are-the-topics-and-substance-consistent-across-the-industry-or-are-they-isolated-to-individual-banks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Are the topics and substance consistent across the industry or are they isolated to individual banks?</h3>
+
+<p>We used this corpus to create datasets that were associated with each bank. Each dataset was then tested against an existing list of positive and negative words to find a sentiment score of each word in the dataset. In order to quantify the disparity between the mean sentiments of the banks as individuals compared to that of the entire data set, a T-test was performed. </p>
+
+<blockquote>
+<p>t.test(scores$score,scores.A$score,var.equal=T)</p>
+</blockquote>
+
+<pre><code>Two Sample t-test
+</code></pre>
+
+<p>data:  scores$score and scores.A$score
+t = -14.333, df = 277960, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.09243726 -0.07019727
+sample estimates:
+mean of x mean of y 
+0.1390526 0.2203699 </p>
+
+<blockquote>
+<p>t.test(scores$score,scores.B$score,var.equal=T)</p>
+</blockquote>
+
+<pre><code>Two Sample t-test
+</code></pre>
+
+<p>data:  scores$score and scores.B$score
+t = 11.626, df = 271550, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.05733344 0.08058343
+sample estimates:
+ mean of x  mean of y 
+0.13905262 0.07009419 </p>
+
+<blockquote>
+<p>t.test(scores$score,scores.C$score,var.equal=T)</p>
+</blockquote>
+
+<pre><code>Two Sample t-test
+</code></pre>
+
+<p>data:  scores$score and scores.C$score
+t = 12.667, df = 247920, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.08046068 0.10991763
+sample estimates:
+ mean of x  mean of y 
+0.13905262 0.04386347 </p>
+
+<blockquote>
+<p>t.test(scores$score,scores.D$score,var.equal=T)</p>
+</blockquote>
+
+<pre><code>Two Sample t-test
+</code></pre>
+
+<p>data:  scores$score and scores.D$score
+t = 19.438, df = 273000, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.1003944 0.1229112
+sample estimates:
+ mean of x  mean of y 
+0.13905262 0.02739986 </p>
+
+<p>The above T-tests check to see if there is a difference in the mean sentiment between the entire data set and social media posts mentioning specific banks (BankA, BankB, BankC, and BankD). The null hypothesis was that there would be no difference between the groups. In every case, the p-value was overwhelmingly small (2.2 x 10-16), so the null hypothesis can be rejected with a very high degree of certainty. On average, the BankA posts scored higher on the sentiment analysis than the general posts. The mean sentiment of each of the remaining 3 banks was lower than the general average. BankD scored the worst, followed by BankC, and then BankB. Looking at the violin plots, the normality assumption of the t-tests seems to be fulfilled as well as the assumption of equal variance. Some of the groups have shortened tails, but because of how large the dataset was, this is not very worrisome. The outliers also do not present a source of issue as the large size of the dataset keeps them from being particularly influential and unusual values are bound to pop up in a dataset composed of thousands of pieces of data. Thus, it can be concluded from the sentiment analysis that which bank the customer is talking about does in fact have an effect on how positive or negative the social media post is (for this dataset).</p>
+
+<p>The null hypothesis was that there would be no difference between the mean sentiments of a given bank compared to that of mean sentiment of the banks combined. Please see the attached document titled Statistical analysis to see each test. Looking at the violin plots, the normality assumption of the t-tests appears to be fulfilled as well as the assumption of equal variance. Bank c and d have shortened tails, however, due to the size of the data set, it can be determined that the t-test qualifies as an appropriate model. The outliers are of no concern due to the number of observations in the dataset and their affect is therefore negligible. 
+Factors considered, it is safe to conclude a relationship exists between the bank being discussed in a tweet and the positivity or negativity of the language in the tweet. In every case, the p-value was overwhelmingly small (2.2 x 10-16). The null hypothesis can be rejected with 100% confidence. On average, the BankA posts scored higher on the sentiment analysis than the general posts. The mean sentiment of each of the remaining 3 banks was lower than the general average. BankD scored the worst, followed by BankC, and then BankB. </p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/squigley17/Wells-Fargo-Analytics-Competition">Wells-fargo-analytics-competition</a> is maintained by <a href="https://github.com/squigley17">squigley17</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
