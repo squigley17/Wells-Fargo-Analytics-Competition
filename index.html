@@ -32,57 +32,7 @@
 
 <p>We created a dendrogram of frequent terms which can also be found in the attached files. From these, we looked at correlation between frequent terms and other relevant words in the data set. Some interesting correlations can be found in the document titled “correlations.” The most commonly used words which most frequently concerned the topics of banking services and words surrounding communications were words such as the words <strong>“please”, “help”, and “call”</strong>. </p>
 
-<blockquote>
-<p>findAssocs(dtm.clean, "call", 0.1)
-  phone discuss    give  number  please   happy    best   visit 
-   0.43    0.27    0.22    0.21    0.19    0.15    0.11    0.11 </p>
-
-<p>findAssocs(dtm.clean, "business", 0.1)
-  small mission   swing    main    vote  street program   today   apply  grants   learn    full    here    more 
-   0.59    0.58    0.58    0.57    0.57    0.56    0.55    0.55    0.53    0.52    0.50    0.46    0.35    0.31 </p>
-
-<p>findAssocs(dtm.clean, "best", 0.1)
-   time  dirmsg   phone  please    call contact    well 
-   0.28    0.18    0.15    0.13    0.11    0.11    0.10 </p>
-
-<p>findAssocs(dtm.clean, "account", 0.1)
-numbers    tell     try     any   about    with  dirmsg  follow    help    like     not 
-   0.32    0.18    0.17    0.13    0.12    0.12    0.11    0.11    0.10    0.10    0.10 </p>
-
-<p>findAssocs(dtm.clean, "please", 0.1)
-     dirmsg         let       phone  assistance        help         can        need      follow         see 
-       0.47        0.29        0.27        0.26        0.24        0.23        0.23        0.22        0.21 
-       know        call   following    anything     discuss        like       happy      assist        best 
-       0.20        0.19        0.19        0.17        0.16        0.16        0.15        0.13        0.13 
-        any     details     numbers     contact        give        info       tweet information 
-       0.12        0.12        0.12        0.11        0.11        0.11        0.11        0.10 </p>
-
-<p>findAssocs(dtm.clean, "help", 0.1)
-       see  following        can       need assistance        let     please   anything       know        how 
-      0.40       0.36       0.33       0.31       0.30       0.28       0.24       0.22       0.22       0.21 
-      like     dirmsg      happy        try      still       able      phone    account       info 
-      0.18       0.17       0.17       0.17       0.16       0.15       0.11       0.10       0.10 </p>
-
-<p>findAssocs(dtm.clean, "today", 0.1)
- mission    swing     main     vote   street  program    apply   grants    small    learn     full     here business     more 
-    0.94     0.94     0.93     0.92     0.91     0.89     0.87     0.84     0.83     0.82     0.75     0.58     0.55     0.48 </p>
-
-<p>findAssocs(dtm.clean, "small", 0.1)
- mission    swing     main     vote   street  program    today    apply   grants    learn     full business     here     more 
-    0.88     0.88     0.87     0.86     0.85     0.83     0.83     0.81     0.78     0.77     0.70     0.59     0.54     0.45 </p>
-
-<p>findAssocs(dtm.clean, "vote", 0.1)
- mission    swing     main  program   street   grants    today    apply    small    learn     full     here business     more 
-    0.98     0.98     0.97     0.95     0.94     0.93     0.92     0.90     0.86     0.85     0.78     0.60     0.57     0.50 </p>
-
-<p>findAssocs(dtm.clean, "apply", 0.1)
-   swing  mission     main     vote   street  program    today   grants    small    learn     full     here business     more 
-    0.92     0.91     0.90     0.90     0.88     0.87     0.87     0.81     0.81     0.80     0.73     0.56     0.53     0.47</p>
-
-<p>findAssocs(dtm.clean, "mission", 0.1)
-    main    swing     vote   street  program    today    apply   grants    small    learn     full     here business     more 
-    0.99     0.99     0.98     0.96     0.94     0.94     0.91     0.89     0.88     0.86     0.79     0.61     0.58     0.51</p>
-</blockquote>
+<p><img src="http://i.imgur.com/jGlR0JZ.png" alt="correlation"></p>
 
 <p>The dendrogram indicates the relationship of words to each other using Euclidian distance formula. Words that are more frequently used together appear in branches nearer to each other. </p>
 
