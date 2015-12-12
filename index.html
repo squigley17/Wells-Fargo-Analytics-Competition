@@ -181,14 +181,16 @@ service.freqterms = findFreqTerms(service.dtm, 100)</p>
 
 <p><img src="http://i.imgur.com/dI1BTTy.png" alt=""></p>
 
-<p>We performed a sentiment analysis on the subsets. They were then compiled and we created a boxplot of the distribution of the scores between topics. (I was not able to create the visual though, because R stopped working)</p>
+<p>We performed a sentiment analysis on the subsets. They were then compiled and we created a boxplot of the distribution of the scores between topics. </p>
 
 <p><code>int.scores = score.sentiment(int.idx, pos, neg, .progress='text')</code>
 <code>service.scores = score.sentiment(service.idx, pos, neg, .progress='text')</code>
 <code>help.scores = score.sentiment(help.idx, pos, neg, .progress='text')</code>
 <code>loan.scores = score.sentiment(loan.idx, pos, neg, .progress='text')</code></p>
 
-<p><code>boxplot(loan.scores$score,help.scores$score,service.scores$scores,int.scores)</code> </p>
+<p><code>boxplot(loan.scores$score,help.scores$score,service.scores$score,int.scores$scores)</code> </p>
+
+<p><img src="http://i.imgur.com/JGh19yc.jpg" alt="boxplot"></p>
 
 <p>Overall, we found that a majority of the conversations were pertaining to customers needing help and going onto social media to seek it. From the trends, we can assume most of these issues were successfully resolved, though they were taken off of public social media to do so.</p>
 
