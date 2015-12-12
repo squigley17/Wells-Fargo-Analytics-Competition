@@ -30,7 +30,9 @@
 <p>See the code flow to better understand our overall process to cleaning the data 
 <img src="http://i.imgur.com/4PWDtVB.png" alt="code flow"></p>
 
-<p>We created a dendrogram of frequent terms which can also be found in the attached files. From these, we looked at correlation between frequent terms and other relevant words in the data set. The most commonly used words which most frequently concerned the topics of banking services and words surrounding communications were words such as the words <strong>“please”, “help”, and “call”</strong>. </p>
+<p>We created a dendrogram of frequent terms which can also be found in the attached files. We found trends in word relationships like thank-information-share-appreciate-feedbankb-center-financial. We found, from this association, that bank b is doing well with helping customers over social media with provided information about financial centers. </p>
+
+<p>From the word associations and trends, we looked at correlation between frequent terms and other relevant words in the data set. The most commonly used words which most frequently concerned the topics of banking services and words surrounding communications were words such as the words <strong>“please”, “help”, and “call”</strong>. These sounds like words most frequently used to describer customer service calls.</p>
 
 <p><img src="http://i.imgur.com/jGlR0JZ.png" alt="correlation"></p>
 
@@ -166,20 +168,20 @@
 
 <p><img src="http://i.imgur.com/0DxEof5.jpg" alt="dendrogram"></p>
 
-<p>In addition to the list of frequent terms from our cleaned data, we ran a series of frequent term analysis based on parts of the dataset containing certain words as follows:</p>
+<p>In addition to the list of frequent terms from our cleaned data, we ran a series of frequent term analyses based on parts of the dataset containing certain words.</p>
 
-<p>Posts in dataset containing: "International"
-''[1] "315.724."             "account"              "alliance"             "also"                 "american"             "atm"<br>
- [7] "bank"                 "banka"                "bankb"                "bankc"                "bankd"                "business"<br>
-[13] "call"                 "card"                 "collect"              "contact"              "court"                "coverage"<br>
-[19] "customer"             "debit"                "dont"                 "finance"              "financial"            "get"<br>
-[25] "global"               "good"                 "group"                "how"                  "international"        "internet"<br>
-[31] "line"                 "ly/"                  "may"                  "money"                "name"                 "name-"<br>
-[37] "name,"                "name."                "name_resp"            "need"                 "new"                  "number"<br>
-[43] "our"                  "phone"                "phone."               "please"               "price"                "rating"<br>
-[49] "reach"                "science"              "search"               "service"              "take"                 "that"<br>
-[55] "they"                 "time"                 "times"                "tt/"                  "twit_hndl_banka"      "twit_hndl_bankb_help"
-[61] "twit_hndl_bankc"      "visit"                "will"                 "wire"''            </p>
+<p>Here is the code used with the example term being "Service"</p>
+
+<p>service.idx = df.idx[sapply(df.idx,function(x) grepl("service",x))]
+service.corp &lt;- VCorpus(VectorSource(service.idx))
+service.dtm &lt;- DocumentTermMatrix(service.corp)
+service.freqterms = findFreqTerms(service.dtm, 100)</p>
+
+<p>Here are the important words found from searching:</p>
+
+<p><img src="http://i.imgur.com/dI1BTTy.png" alt=""></p>
+
+<p>Overall, we found that a majority of the conversations were pertaining to customers needing help and going onto social media to seek it. From the trends, we can assume most of these issues were successfully resolved, though they were taken off of public social media to do so.</p>
 
 <h2>
 <a id="are-the-topics-and-substance-consistent-across-the-industry-or-are-they-isolated-to-individual-banks" class="anchor" href="#are-the-topics-and-substance-consistent-across-the-industry-or-are-they-isolated-to-individual-banks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Are the topics and substance consistent across the industry or are they isolated to individual banks?</h2>
